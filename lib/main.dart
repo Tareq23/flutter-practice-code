@@ -68,6 +68,17 @@ class HomeApp extends StatelessWidget{
               print("Floating action Button");
             }
           ),
+          primary: false,
+          persistentFooterButtons: [
+            RaisedButton(
+              onPressed: (){},
+              child: Icon(Icons.add,color: Colors.white,),
+            ),
+            RaisedButton(
+              onPressed: (){},
+              child: Icon(Icons.clear,color:Colors.white),
+            )
+          ],
         )
     );
   }
