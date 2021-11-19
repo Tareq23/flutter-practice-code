@@ -79,6 +79,21 @@ class HomeApp extends StatelessWidget{
               child: Icon(Icons.clear,color:Colors.white),
             )
           ],
+          bottomNavigationBar: BottomNavigationBar(
+            currentIndex: 0,
+            fixedColor: Colors.greenAccent,
+            items: const [
+              BottomNavigationBarItem(
+                title: Text("Home"),
+                icon: Icon(Icons.home),
+              ),
+              BottomNavigationBarItem(
+                  icon:Icon( Icons.search),
+                  title: Text("Search"),
+
+              )
+            ],
+          ),
         )
     );
   }
