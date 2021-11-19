@@ -27,7 +27,7 @@ class HomeApp extends StatelessWidget{
           //   child: Text("Scaffold body attributes",style: TextStyle(color: Colors.black87,fontSize: 28)),
           //
           // ),
-          drawer: Drawer(
+          endDrawer: Drawer(
             child: ListView(
               children: const <Widget> [
                 DrawerHeader(
