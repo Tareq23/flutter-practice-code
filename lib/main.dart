@@ -61,6 +61,13 @@ class HomeApp extends StatelessWidget{
               ],
             ),
           ),
+          floatingActionButton: FloatingActionButton(
+            elevation: 8.0,
+            child: Icon(Icons.adb_rounded),
+            onPressed:(){
+              print("Floating action Button");
+            }
+          ),
         )
     );
   }
