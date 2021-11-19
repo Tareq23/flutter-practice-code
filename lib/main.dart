@@ -94,6 +94,8 @@ class HomeApp extends StatelessWidget{
               )
             ],
           ),
+          floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+          resizeToAvoidBottomInset: false,
         )
     );
   }
