@@ -30,6 +30,23 @@ class HomePage extends StatelessWidget
         title: const Text("Layout Design",style: TextStyle(color:Colors.black45)),
         centerTitle: true,
       ),
+      body: SingleChildScrollView(
+        child: Row(
+
+          children: [
+            Column(
+                children: const <Widget>[
+                  Text("Row Column 1"),
+                ],
+            ),
+            Column(
+              children: const [
+                  Text("Row Column 2"),
+              ],
+            )
+          ],
+        )
+      ),
     );
   }
 }
