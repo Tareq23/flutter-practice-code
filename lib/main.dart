@@ -1,97 +1,35 @@
 import 'package:flutter/material.dart';
 
-void main()
-{
-  runApp(ScaffoldWidgetPractice());
-}
 
-class ScaffoldWidgetPractice extends StatelessWidget
+void main(){
+  runApp(const MyApp());
+}
+class MyApp extends StatelessWidget
 {
+  const MyApp({Key? key}) : super(key: key);
+
   @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
+  Widget build(BuildContext context)
+  {
+    return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: _StateFulWidget()
+      home:HomePage(),
     );
   }
-
 }
 
-class _StateFulWidget extends StatefulWidget{
-  @override
-  MyStatefulWidget createState() => MyStatefulWidget();
-}
-
-class MyStatefulWidget extends State<_StateFulWidget>
+class HomePage extends StatelessWidget
 {
-  int count=0;
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-        appBar: AppBar(
-          title: Text("Flutter Scaffold Widget"),
-          centerTitle: true,
-        ),
-      body: Center(
-        child:Text("The have pressed the ___count times",style:TextStyle(color:Colors.greenAccent,fontSize: 28.0)),
+  const HomePage({Key? key}) : super(key: key);
 
-      ),
-      bottomNavigationBar: BottomAppBar(
-        shape: const CircularNotchedRectangle(),
-        child: Container(
-          height: 50.0,
-        )
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () => setState(() {
-          count++;
-          print(count);
-        }),
-        tooltip: 'Increment Counter',
-        child: Icon(Icons.add),
-      ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.startDocked,
-      drawer: Drawer(
-        elevation: 8.0,
-        child: Column(
-          children: [
-            UserAccountsDrawerHeader(
-              accountEmail: Text('tareq@gmail.com'),
-              accountName: Text('tareq23'),
-              currentAccountPicture: CircleAvatar(
-                backgroundColor: Colors.yellow,
-                child: Text('abc')
-              ),
-            ),
-            ListTile(
-              title: Text("Inbox"),
-              leading: Icon(Icons.mail),
-            ),
-            Divider(
-              height: 2.0,
-            ),
-            ListTile(
-                title: Text("People"),
-              leading: Icon(Icons.people),
-            ),
-            ListTile(
-              title: Text("Promotion"),
-              leading: Icon(Icons.local_offer),
-            ),
-            ListTile(
-              title: Text("Primary"),
-              leading: Icon(Icons.people),
-            )
-          ],
-        )
+  @override
+  Widget build(BuildContext context){
+    return Scaffold(
+      backgroundColor: Colors.greenAccent,
+      appBar: AppBar(
+        title: const Text("Layout Design",style: TextStyle(color:Colors.black45)),
+        centerTitle: true,
       ),
     );
   }
-
 }
-
-
-
-
-
-
