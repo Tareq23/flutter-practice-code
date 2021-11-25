@@ -1,37 +1,40 @@
 import 'package:flutter/material.dart';
-void main(){
-  runApp(WorkWithImage());
-}
-class WorkWithImage extends StatelessWidget
+
+
+void main()
 {
-  const WorkWithImage({Key? key}) : super(key: key);
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget
+{
+  const MyApp({Key? key}) : super(key: key);
+
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context)
+  {
     return MaterialApp(
-
-        debugShowCheckedModeBanner: false,
-        home:Scaffold(
-
-          appBar: AppBar(
-            title: Text("Developed by MD Tarequl Islam"),
-            centerTitle: true,
-          ),
-          body: SingleChildScrollView(
-            child: Column(
-              children: <Widget> [
-                Image.asset("assets/box.jpg"),
-                Divider(height: 1.0,),
-                Image.asset("assets/facebook.jpg"),
-                Divider(height: 1.0,),
-                Image.asset("assets/laptop.jpg"),
-                Divider(height: 1.0,),
-                Image.asset("assets/monitor.jpg"),
-              ],
-            ),
-          )
-        ),
+      debugShowCheckedModeBanner: false,
+      home: State_Ful_Widget(),
     );
   }
+}
 
+class State_Ful_Widget extends StatefulWidget{
+
+  // ignore: non_constant_identifier_names
+  @override
+  HomeState createState() => HomeState();
+
+}
+
+class HomeState extends State<State_Ful_Widget>
+{
+  @override
+  Widget build(BuildContext context) {
+   return const Scaffold(
+
+   );
+  }
 
 }
