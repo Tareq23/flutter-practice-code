@@ -35,11 +35,17 @@ class HomeState extends State<State_Ful_Widget>
    return   Scaffold(
      body: Center(
        child: CircleAvatar(
-         // radius: 100,
-         backgroundImage: AssetImage("assets/box.jpg"),
-         minRadius: 100,
-         maxRadius: 800,
-       ),
+         radius: 210,
+         backgroundColor: Colors.amberAccent,
+         child: CircleAvatar(
+           radius: 200,
+           backgroundImage: AssetImage("assets/box.jpg"),
+           // minRadius: 100,
+           // maxRadius: 800,
+           child: Text("Hello Google", style: TextStyle(fontSize: 20),),
+           foregroundColor: Colors.black87,
+         ),
+       )
      )
    );
   }
