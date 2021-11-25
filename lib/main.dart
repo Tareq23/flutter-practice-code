@@ -32,8 +32,15 @@ class HomeState extends State<State_Ful_Widget>
 {
   @override
   Widget build(BuildContext context) {
-   return const Scaffold(
-
+   return   Scaffold(
+     body: Center(
+       child: CircleAvatar(
+         // radius: 100,
+         backgroundImage: AssetImage("assets/box.jpg"),
+         minRadius: 100,
+         maxRadius: 800,
+       ),
+     )
    );
   }
 
