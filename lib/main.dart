@@ -42,7 +42,7 @@ class HomeState extends State<State_Ful_Widget>
            backgroundImage: AssetImage("assets/box.jpg"),
            // minRadius: 100,
            // maxRadius: 800,
-           child: Text("Hello Google", style: TextStyle(fontSize: 20),),
+           child: Text("Hello Google", style: TextStyle(fontSize: 40),),
            foregroundColor: Colors.black87,
          ),
        )
