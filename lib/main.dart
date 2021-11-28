@@ -1,51 +1,72 @@
 import 'package:flutter/material.dart';
 
-
-void main(){
+void main() {
   runApp(const MyApp());
 }
-class MyApp extends StatelessWidget
-{
+
+class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context)
-  {
+  Widget build(BuildContext constext) {
     return const MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home:HomePage(),
+      home: HomeState(),
     );
   }
 }
 
-class HomePage extends StatelessWidget
-{
-  const HomePage({Key? key}) : super(key: key);
+class HomeState extends StatefulWidget {
+  const HomeState({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context){
+  MyCustomFormWidget createState() {
+    return MyCustomFormWidget();
+  }
+}
+
+class MyCustomFormWidget extends State<HomeState> {
+  @override
+  Widget build(BuildContext context) {
+    final _formKey = GlobalKey<FormState>();
     return Scaffold(
-      backgroundColor: Colors.greenAccent,
       appBar: AppBar(
-        title: const Text("Layout Design",style: TextStyle(color:Colors.black45)),
+        title: const Text(
+          "My custom form widget",
+          style: TextStyle(color: Colors.grey),
+        ),
         centerTitle: true,
       ),
-      body: SingleChildScrollView(
-        child: Row(
-
-          children: [
-            Column(
-                children: const <Widget>[
-                  Text("Row Column 1"),
-                ],
+      body: Form(
+        key: _formKey,
+        child: Column(
+          children: <Widget>[
+            TextFormField(
+              validator: (value) {
+                if (value == null || value.isEmpty) {
+                  // ignore: avoid_print
+                  print("Please Enter Some text");
+                  return "Please Enter some text";
+                } else {
+                  // ignore: avoid_print
+                  print(value);
+                }
+              },
             ),
-            Column(
-              children: const [
-                  Text("Row Column 2"),
-              ],
-            )
+            ElevatedButton(
+                onPressed: () {
+                  if (_formKey.currentState!.validate()) {
+                    ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+                      content: Text("processing Data"),
+                    ));
+                  }
+                  // _formKey.currentState!.validate()
+                },
+                child: const Text(
+                  "Submit",
+                  style: TextStyle(fontWeight: FontWeight.bold),
+                )),
           ],
-        )
+        ),
       ),
     );
   }
