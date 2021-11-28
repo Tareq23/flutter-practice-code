@@ -1,96 +1,70 @@
-
-
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
 
-void main(){
+void main() {
   runApp(MyApp());
 }
 
-class MyApp extends StatelessWidget
-{
+class MyApp extends StatelessWidget {
   @override
-  Widget build(BuildContext context){
-    const appTitle = "Form Demo";
-    return  MaterialApp(
-        debugShowCheckedModeBanner: false,
-        title: appTitle,
-        home: HomeState(),
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: Home(),
     );
   }
 }
 
-class HomeState extends StatefulWidget
-{
+class Home extends StatefulWidget {
   @override
-  CustomForm createState (){
-    return CustomForm();
-  }
+  MyFormState createState() => MyFormState();
 }
 
-class CustomForm  extends State<HomeState>{
+class MyFormState extends State<Home> {
+  late FocusNode myFocusNode;
+
+  // Define the focus node. To manage the lifecycle, create the FocusNode in
+  // the initState method, and clean it up in the dispose method.
+
+  @override
+  void initState() {
+    super.initState();
+    myFocusNode = FocusNode();
+  }
+
+  @override
+  void dispose() {
+    // Clean up the focus node when the Form is disposed.
+    myFocusNode.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
-     return  Scaffold(
-        appBar: AppBar(
-          title: const Text("Form Create Style", style: TextStyle(fontWeight: FontWeight.w900),),
-        ),
-       body: Column(
-         children:   <Widget>[
-           const Padding(
-               padding: EdgeInsets.symmetric(horizontal: 8, vertical: 16),
-             child: TextField(
-               decoration: InputDecoration(
-                 enabledBorder: OutlineInputBorder(),
-                 hintText: 'Enter a search term'
-               ),
-             ),
-           ),
-          const Padding(
-            padding: EdgeInsets.symmetric(horizontal: 80, vertical: 16),
-            child:  TextField(
-              decoration:  InputDecoration(
-                border: UnderlineInputBorder(),
-                hintText: 'Enter your username',
-              ),
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text("Form focus and text fields"),
+      ),
+      body: Padding(
+        padding: const EdgeInsets.all(10.0),
+        child: Column(
+          children: <Widget> [
+            TextFormField(
+              autofocus: true,
             ),
-          ),
-           Padding(
-             padding: const EdgeInsets.symmetric(horizontal: 80, vertical: 20),
-             child:  TextFormField(
-               decoration:  InputDecoration(
-                 labelText: 'Enter something',
-                 enabledBorder: OutlineInputBorder(
-                   borderSide: const BorderSide(width: 3, color: Colors.greenAccent),
-                   borderRadius:  BorderRadius.circular(20),
-                 ),
-                 focusedBorder:  OutlineInputBorder(
-                   // borderSide: BorderSide(width: 20, color: Colors.redAccent),
-                   borderSide: const BorderSide(width: 5, color: Colors.cyanAccent),
-                   // borderRadius:  BorderRadius.zero,
-                   borderRadius: BorderRadius.circular(15),
-                 )
-
-               ),
-             ),
-           ),
-           Padding(
-             padding: const EdgeInsets.fromLTRB(20, 50, 20, 10),
-             child: TextFormField(
-               decoration:  InputDecoration(
-                 hintText: 'Write something',
-                 labelText: 'Always write something',
-                 border: OutlineInputBorder(
-                   borderSide: const BorderSide(width: 3, color: Colors.pink),
-                   borderRadius: BorderRadius.circular(16),
-                 )
-               ),
-             ),
-           )
-         ],
-       )
-     );
+            TextFormField(
+              focusNode: myFocusNode,
+            )
+          ],
+        ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: (){
+          myFocusNode.requestFocus();
+        },
+        tooltip: 'Focus second text field',
+        child: const Icon(Icons.add_a_photo_outlined),
+      ),
+      // This trailing comma makes auto-formatting nicer for build methods.
+    );
   }
 }
-
