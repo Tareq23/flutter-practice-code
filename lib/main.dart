@@ -1,70 +1,73 @@
+
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(MyApp());
+void main(){
+  runApp(const MainApp());
 }
 
-class MyApp extends StatelessWidget {
+class MainApp extends StatelessWidget
+{
+  const MainApp({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: Home(),
+    // TODO: implement build
+    return const MaterialApp(
+      home:  MyForm(),
     );
   }
 }
 
-class Home extends StatefulWidget {
+class MyForm extends StatefulWidget
+{
+  const MyForm({Key? key}) : super(key: key);
+
   @override
-  MyFormState createState() => MyFormState();
+  MyFormState createState(){
+    return MyFormState();
+  }
 }
 
-class MyFormState extends State<Home> {
-  late FocusNode myFocusNode;
+class MyFormState extends State<MyForm>{
 
-  // Define the focus node. To manage the lifecycle, create the FocusNode in
-  // the initState method, and clean it up in the dispose method.
+  final myController = TextEditingController();
+
 
   @override
   void initState() {
+    // TODO: implement initState
     super.initState();
-    myFocusNode = FocusNode();
+    myController.addListener(printLatestValue);
+  }
+
+  void printLatestValue(){
+    // ignore: avoid_print
+    print("Latest value using Text Editing Controller ${myController.text}");
   }
 
   @override
-  void dispose() {
-    // Clean up the focus node when the Form is disposed.
-    myFocusNode.dispose();
-    super.dispose();
-  }
-
-  @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context){
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Form focus and text fields"),
+        title: const Text("Handle changes to a text field"),
+        centerTitle: true,
       ),
       body: Padding(
-        padding: const EdgeInsets.all(10.0),
+        padding: const EdgeInsets.all(20.0),
         child: Column(
-          children: <Widget> [
+          children: [
             TextFormField(
-              autofocus: true,
+              onChanged: (text){
+                  // ignore: avoid_print
+                  print("Latest value using onChanged : $text");
+              },
             ),
             TextFormField(
-              focusNode: myFocusNode,
+              controller: myController,
             )
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: (){
-          myFocusNode.requestFocus();
-        },
-        tooltip: 'Focus second text field',
-        child: const Icon(Icons.add_a_photo_outlined),
-      ),
-      // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
 }
