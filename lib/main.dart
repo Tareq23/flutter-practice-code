@@ -40,6 +40,13 @@ class MyFormState extends State<MyForm>{
     myController.addListener(printLatestValue);
   }
 
+
+  @override
+  void dispose(){
+    myController.dispose();
+    super.dispose();
+  }
+
   void printLatestValue(){
     // ignore: avoid_print
     print("Latest value using Text Editing Controller ${myController.text}");
@@ -67,6 +74,21 @@ class MyFormState extends State<MyForm>{
             )
           ],
         ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: (){
+          showDialog(
+              // context: context, builder: builder
+            context: context,
+            builder: (context){
+              return AlertDialog(
+                content: Text(myController.text),
+              );
+            },
+          );
+        },
+        tooltip: 'Show me the value',
+        child: const Icon(Icons.text_fields),
       ),
     );
   }
