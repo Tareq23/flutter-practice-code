@@ -1,94 +1,71 @@
-
 import 'package:flutter/material.dart';
 
 void main(){
-  runApp(const MainApp());
+  runApp(const MyApp());
 }
 
-class MainApp extends StatelessWidget
+class MyApp extends StatelessWidget
 {
-  const MainApp({Key? key}) : super(key: key);
+  const MyApp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
-    return const MaterialApp(
-      home:  MyForm(),
+    return MaterialApp(
+      home:Scaffold(
+        appBar: AppBar(
+          title: const Text("Layout Basic's"),
+          centerTitle: true,
+        ),
+        body: Row(
+          // mainAxisAlignment: MainAxisAlignment.center,
+          // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          // crossAxisAlignment: CrossAxisAlignment.end,
+          // crossAxisAlignment: CrossAxisAlignment.stretch,
+          // crossAxisAlignment: CrossAxisAlignment.start,
+          children:  [
+
+            const BlueBox(),
+            BiggerBox(),
+            const BlueBox(),
+          ],
+        ),
+      )
     );
   }
 }
 
-class MyForm extends StatefulWidget
-{
-  const MyForm({Key? key}) : super(key: key);
-
-  @override
-  MyFormState createState(){
-    return MyFormState();
-  }
-}
-
-class MyFormState extends State<MyForm>{
-
-  final myController = TextEditingController();
 
 
-  @override
-  void initState() {
-    // TODO: implement initState
-    super.initState();
-    myController.addListener(printLatestValue);
-  }
 
 
-  @override
-  void dispose(){
-    myController.dispose();
-    super.dispose();
-  }
-
-  void printLatestValue(){
-    // ignore: avoid_print
-    print("Latest value using Text Editing Controller ${myController.text}");
-  }
+class BlueBox extends StatelessWidget{
+  const BlueBox({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context){
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text("Handle changes to a text field"),
-        centerTitle: true,
+    return Container(
+      width: 50,
+      height: 50,
+      decoration: BoxDecoration(
+        color: Colors.blue,
+        border: Border.all(),
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(20.0),
-        child: Column(
-          children: [
-            TextFormField(
-              onChanged: (text){
-                  // ignore: avoid_print
-                  print("Latest value using onChanged : $text");
-              },
-            ),
-            TextFormField(
-              controller: myController,
-            )
-          ],
-        ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: (){
-          showDialog(
-              // context: context, builder: builder
-            context: context,
-            builder: (context){
-              return AlertDialog(
-                content: Text(myController.text),
-              );
-            },
-          );
-        },
-        tooltip: 'Show me the value',
-        child: const Icon(Icons.text_fields),
+    );
+  }
+}
+
+class BiggerBox extends StatelessWidget{
+  @override
+  Widget build(BuildContext context){
+    return Container(
+      height: 100,
+      width: 50,
+      decoration: BoxDecoration(
+        color: Colors.red,
+        border: Border.all(),
       ),
     );
   }
