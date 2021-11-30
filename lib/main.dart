@@ -1,53 +1,40 @@
 import 'package:flutter/material.dart';
 
 
-void main()
-{
+void main(){
   runApp(MyApp());
 }
 
-class MyApp extends StatelessWidget
-{
-  const MyApp({Key? key}) : super(key: key);
+class MyApp extends StatelessWidget{
 
   @override
-  Widget build(BuildContext context)
-  {
+  Widget build(BuildContext context){
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: State_Ful_Widget(),
+        home: CustomStatefulWidget(),
     );
   }
-}
-
-class State_Ful_Widget extends StatefulWidget{
-
-  // ignore: non_constant_identifier_names
-  @override
-  HomeState createState() => HomeState();
 
 }
 
-class HomeState extends State<State_Ful_Widget>
+class CustomStatefulWidget extends StatefulWidget
 {
   @override
-  Widget build(BuildContext context) {
-   return   Scaffold(
-     body: Center(
-       child: CircleAvatar(
-         radius: 210,
-         backgroundColor: Colors.amberAccent,
-         child: CircleAvatar(
-           radius: 200,
-           backgroundImage: AssetImage("assets/box.jpg"),
-           // minRadius: 100,
-           // maxRadius: 800,
-           child: Text("Hello Google", style: TextStyle(fontSize: 40),),
-           foregroundColor: Colors.black87,
-         ),
-       )
-     )
-   );
-  }
+  _MyState createState () => _MyState();
+}
 
+class _MyState extends State<CustomStatefulWidget>
+{
+  @override
+  Widget build(BuildContext context){
+    return Scaffold(
+      // appBar: AppBar(),
+      body: SafeArea(
+        child: Column(
+          children: const [
+            Text("Hellow world"),
+          ],
+        ),
+      )
+    );
+  }
 }
