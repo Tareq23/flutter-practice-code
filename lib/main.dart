@@ -29,17 +29,109 @@ class _MyState extends State<CustomStatefulWidget>
     return Scaffold(
       // appBar: AppBar(),
       body: SafeArea(
-        child: Column(
-          children:  [
-            const Text("Hello world"),
-            Container(
-              width: 100,
-              height: 100,
-              color: Colors.green,
-              child: const Text("Container Widget"),
-            )
-          ],
-        ),
+        child: SingleChildScrollView(
+          child: Column(
+            children:  [
+              const Text("Hello world"),
+              Container(
+                width: 200,
+                height: 200,
+                color: Colors.green,
+                child: const Text("Container Widget", style: TextStyle(
+                  fontSize: 30,
+                ),),
+              ),
+              Container(
+                width: 200,
+                height: 200,
+                color: Colors.red,
+                child: const Text("Container Widget", style: TextStyle(
+                  fontSize: 30,
+                ),),
+              ),
+              Container(
+                width: 200,
+                height: 200,
+                color: Colors.blue,
+                child: const Text("Container Widget", style: TextStyle(
+                  fontSize: 30,
+                ),),
+              ),
+              Container(
+                width: 200,
+                height: 200,
+                color: Colors.blue,
+                child: const Text("Container Widget", style: TextStyle(
+                  fontSize: 30,
+                ),),
+              ),
+              Container(
+                width: 200,
+                height: 200,
+                color: Colors.blue,
+                child: const Text("Container Widget", style: TextStyle(
+                  fontSize: 30,
+                ),),
+              ),
+              Container(
+                width: 200,
+                height: 200,
+                color: Colors.blue,
+                child: const Text("Container Widget", style: TextStyle(
+                  fontSize: 30,
+                ),),
+              ),
+              Container(
+                width: 200,
+                height: 200,
+                color: Colors.blue,
+                child: const Text("Container Widget", style: TextStyle(
+                  fontSize: 30,
+                ),),
+              ),
+              Container(
+                width: 200,
+                height: 200,
+                color: Colors.blue,
+                child: const Text("Container Widget", style: TextStyle(
+                  fontSize: 30,
+                ),),
+              ),
+              Container(
+                width: 200,
+                height: 200,
+                color: Colors.blue,
+                child: const Text("Container Widget", style: TextStyle(
+                  fontSize: 30,
+                ),),
+              ),
+              Container(
+                width: 200,
+                height: 200,
+                color: Colors.blue,
+                child: const Text("Container Widget", style: TextStyle(
+                  fontSize: 30,
+                ),),
+              ),
+              Container(
+                width: 200,
+                height: 200,
+                color: Colors.blue,
+                child: const Text("Container Widget", style: TextStyle(
+                  fontSize: 30,
+                ),),
+              ),
+              Container(
+                width: 200,
+                height: 200,
+                color: Colors.blue,
+                child: const Text("Container Widget", style: TextStyle(
+                  fontSize: 30,
+                ),),
+              ),
+            ],
+          ),
+        )
       )
     );
   }
