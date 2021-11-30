@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 void main(){
-  runApp(const MyApp());
+  runApp( MyApp());
 }
 
 class MyApp extends StatelessWidget
@@ -18,18 +18,20 @@ class MyApp extends StatelessWidget
           centerTitle: true,
         ),
         body: Row(
-          // mainAxisAlignment: MainAxisAlignment.center,
-          // mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          // crossAxisAlignment: CrossAxisAlignment.end,
-          // crossAxisAlignment: CrossAxisAlignment.stretch,
-          // crossAxisAlignment: CrossAxisAlignment.start,
-          children:  [
+          children: [
+            // BlueBox(),
+            Flexible(
+              child: BlueBox(),
+              flex: 1,
+              // fit: FlexFit.loose,
+              fit: FlexFit.tight,
+            ),
 
-            const BlueBox(),
-            BiggerBox(),
-            const BlueBox(),
+            Flexible(
+              child: BlueBox(),
+              flex: 1,
+              fit: FlexFit.tight,
+            )
           ],
         ),
       )
