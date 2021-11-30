@@ -30,8 +30,14 @@ class _MyState extends State<CustomStatefulWidget>
       // appBar: AppBar(),
       body: SafeArea(
         child: Column(
-          children: const [
-            Text("Hellow world"),
+          children:  [
+            const Text("Hello world"),
+            Container(
+              width: 100,
+              height: 100,
+              color: Colors.green,
+              child: const Text("Container Widget"),
+            )
           ],
         ),
       )
