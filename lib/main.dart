@@ -23,8 +23,11 @@ class MyApp extends StatelessWidget{
               padding: const EdgeInsets.only(top:20,),
               children: const [
                 UserAccountsDrawerHeader(
-                    accountName:  Text("User Account"),
-                    accountEmail:  Text("example@checker.com"),
+                    decoration: BoxDecoration(
+                      color: Colors.redAccent,
+                    ),
+                    accountName:  Text("User Account",  style: TextStyle(color:Colors.white, fontSize: 26.0,fontWeight: FontWeight.bold),),
+                    accountEmail:  Text("example@checker.com", style: TextStyle(color:Colors.white, fontSize: 20.0),),
                     currentAccountPicture: CircleAvatar(
                       backgroundImage: NetworkImage("https://cdn.pixabay.com/photo/2021/09/13/05/34/kid-6620283_960_720.jpg"),
                     ),
@@ -54,7 +57,7 @@ class MyApp extends StatelessWidget{
                   title: Text("Education Info"),
                   // trailing: Icon(Icons.contact_mail),
                   trailing: Icon(Icons.arrow_forward),
-                ),ListTile(
+                ), ListTile(
                   title: Text("Logout"),
                   // trailing: Icon(Icons.contact_mail),
                   trailing: Icon(Icons.arrow_forward),
