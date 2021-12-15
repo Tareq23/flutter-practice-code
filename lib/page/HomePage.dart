@@ -25,10 +25,11 @@ class _HomePage extends State<HomePage>
             child: Center(
               child: TextButton(
                 onPressed: (){
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context)=>FirstPage())
-                  );
+                  // Navigator.push(
+                  //   context,
+                  //   MaterialPageRoute(builder: (context)=>FirstPage())
+                  // );
+                  Navigator.pushNamed(context, '/first');
                 },
                 child: Container(
                   padding: EdgeInsets.all(0),
