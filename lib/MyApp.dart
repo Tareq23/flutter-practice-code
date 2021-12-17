@@ -1,7 +1,9 @@
 
 
-import 'package:demoapp/page/Page1.dart';
-import 'package:demoapp/page/init.dart';
+import 'package:demoapp/page/Home.dart';
+import 'package:demoapp/page/first.dart';
+import 'package:demoapp/page/second.dart';
+
 import 'package:flutter/material.dart';
 
 
@@ -12,11 +14,16 @@ class MyApp extends StatelessWidget
 
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      initialRoute: '/',
+      // initialRoute: '/',
+      initialRoute: Home.route,
       routes: {
-          '/firstPage' : (context) => Page1()
+          Home.route : (context) => Home(),
+          First.firstRoute : (context) => First(),
+          Second.secondRoute : (context) => Second(),
       },
-      home: Init()
+      home: Home(),
+      // home: First(),
+      // home: Second(),
     );
   }
 }
