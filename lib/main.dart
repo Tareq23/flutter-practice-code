@@ -1,11 +1,13 @@
 import 'package:demoapp/ExpandWidget.dart';
 import 'package:demoapp/SwitchSliderTextFieldWidget.dart';
+import 'package:demoapp/customCard.dart';
 import 'package:flutter/material.dart';
 
 void main() {
   // runApp(FlutterButton());
   // runApp(ExpandWidget());
-  runApp(SwitchSliderTextFieldWidget());
+  // runApp(SwitchSliderTextFieldWidget());
+  runApp(CustomVCard());
 }
 
 class FlutterButton extends StatelessWidget {
