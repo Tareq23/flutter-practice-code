@@ -55,10 +55,16 @@ flutter:
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
   # the material Icons class.
-#    uses-material-design: true
+   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
    assets:
+     - assets/dice/dice1.png
+     - assets/dice/dice2.png
+     - assets/dice/dice3.png
+     - assets/dice/dice4.png
+     - assets/dice/dice5.png
+     - assets/dice/dice6.png
      - assets/box.jpg
      - assets/facebook.jpg
      - assets/laptop.jpg
