@@ -56,6 +56,9 @@ class _DiceAppState extends State<DiceApp> {
                       ),
                     ),
                   ),
+                  const SizedBox(
+                    width: 10,
+                  ),
                   Expanded(
                     child: FlatButton(
                       onPressed: () {},
@@ -63,6 +66,9 @@ class _DiceAppState extends State<DiceApp> {
                         image: AssetImage('assets/dice/dice$midDiceNum.png'),
                       ),
                     ),
+                  ),
+                  const SizedBox(
+                    width: 10,
                   ),
                   Expanded(
                     child: FlatButton(

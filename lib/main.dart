@@ -3,6 +3,7 @@
 import 'package:demoapp/VCard.dart';
 import 'package:demoapp/customCard.dart';
 import 'package:demoapp/dice.dart';
+import 'package:demoapp/form.dart';
 import 'package:demoapp/layoutPage.dart';
 import 'package:flutter/material.dart';
 
@@ -15,5 +16,6 @@ void main()
   // runApp(CustomCard());
   // runApp(CustomVCard());
   // runApp(LayoutWidget());
-  runApp(DiceApp());
+  // runApp(DiceApp());
+  runApp(CustomForm());
 }
