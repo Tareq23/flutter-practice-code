@@ -54,7 +54,12 @@ class _HomePageState extends State<HomePage> {
                       setState(() {
                         selected = index;
                       });
-                      
+                      selected == 0 ?
+                      ScaffoldMessenger.of(context).showSnackBar(
+                          const SnackBar(
+                            content: Text('Hey, I am snack bar'),
+                          )
+                      ) : null;
                     },
                     child: Container(
                       height: double.infinity,
