@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 class SnackBarWidget extends StatelessWidget {
   const SnackBarWidget({Key? key}) : super(key: key);
@@ -59,7 +60,15 @@ class _HomePageState extends State<HomePage> {
                           const SnackBar(
                             content: Text('Hey, I am snack bar'),
                           )
-                      ) : null;
+                      ) : Fluttertoast.showToast(
+                          msg: "This is Center Short Toast",
+                          toastLength: Toast.LENGTH_SHORT,
+                          gravity: ToastGravity.CENTER,
+                          timeInSecForIosWeb: 1,
+                          backgroundColor: Colors.red,
+                          textColor: Colors.white,
+                          fontSize: 16.0
+                      );
                     },
                     child: Container(
                       height: double.infinity,
