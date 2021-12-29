@@ -2,6 +2,7 @@ import 'package:demoapp/ExpandWidget.dart';
 import 'package:demoapp/SwitchSliderTextFieldWidget.dart';
 import 'package:demoapp/customCard.dart';
 import 'package:demoapp/list_view/list_view.dart';
+import 'package:demoapp/snack_bar.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -9,7 +10,8 @@ void main() {
   // runApp(ExpandWidget());
   // runApp(SwitchSliderTextFieldWidget());
   // runApp(CustomVCard());
-  runApp(ShowStudentList());
+  // runApp(ShowStudentList());
+  runApp(SnackBarWidget());
 }
 
 class FlutterButton extends StatelessWidget {
