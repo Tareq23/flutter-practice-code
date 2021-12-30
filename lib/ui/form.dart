@@ -36,7 +36,7 @@ class _FormStateState extends State<FormState> {
                   padding: const EdgeInsets.only(top:10,bottom: 10),
                   alignment: Alignment.center,
                   color: Colors.lightGreenAccent,
-                  child: Text('Form ui'.toUpperCase(),style: const TextStyle(
+                  child: Text('Form Page'.toUpperCase(),style: const TextStyle(
                     fontSize: 34,
                     fontWeight: FontWeight.w700,
                     color: Colors.white,
@@ -49,7 +49,7 @@ class _FormStateState extends State<FormState> {
                     height: MediaQuery.of(context).size.height - 80,
                     child: const Image(
                       image: NetworkImage(
-                        'https://cdn.pixabay.com/photo/2020/01/18/03/01/donations-keeps-me-going-4774362__340.jpg',
+                        'https://cdn.pixabay.com/photo/2018/08/14/13/23/ocean-3605547__340.jpg',
                       ),
                       width: double.infinity,
                       height: double.infinity,

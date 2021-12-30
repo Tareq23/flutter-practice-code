@@ -6,6 +6,7 @@ import 'package:demoapp/dice.dart';
 import 'package:demoapp/form.dart';
 import 'package:demoapp/layoutPage.dart';
 import 'package:demoapp/ui/form.dart';
+import 'package:demoapp/ui/form_page.dart';
 import 'package:demoapp/ui/stateful_widget.dart';
 import 'package:flutter/material.dart';
 
@@ -21,5 +22,6 @@ void main()
   // runApp(DiceApp());
   // runApp(CustomForm());
   // runApp(MyAppState());
-  runApp(FormWidget());
+  // runApp(FormWidget());
+  runApp(FormPage());
 }
