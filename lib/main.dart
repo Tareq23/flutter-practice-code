@@ -5,6 +5,7 @@ import 'package:demoapp/customCard.dart';
 import 'package:demoapp/dice.dart';
 import 'package:demoapp/form.dart';
 import 'package:demoapp/layoutPage.dart';
+import 'package:demoapp/ui/stateful_widget.dart';
 import 'package:flutter/material.dart';
 
 import 'ButtonPracticeWidget.dart';
@@ -17,5 +18,6 @@ void main()
   // runApp(CustomVCard());
   // runApp(LayoutWidget());
   // runApp(DiceApp());
-  runApp(CustomForm());
+  // runApp(CustomForm());
+  runApp(MyAppState());
 }

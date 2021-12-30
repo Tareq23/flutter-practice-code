@@ -59,6 +59,7 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
    assets:
+     - assets/beach-images/
      - assets/dice/dice1.png
      - assets/dice/dice2.png
      - assets/dice/dice3.png
