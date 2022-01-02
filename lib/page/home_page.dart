@@ -37,8 +37,42 @@ class _HomeStateState extends State<HomeState> {
       ),
       body: Column(
         children: [
-          Center(
-            child:  Text(user.displayName.toString()),
+          Expanded(
+            child: Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(30),
+              ),
+              child: Container(
+                width: MediaQuery.of(context).size.width,
+                padding: EdgeInsets.symmetric(
+                  horizontal: MediaQuery.of(context).size.width * 0.05,
+                ),
+                decoration: BoxDecoration(
+                  color: Colors.yellowAccent
+                ),
+                child: Row(
+                  children: [
+                    SizedBox(
+                      width: MediaQuery.of(context).size.width * 0.30,
+                      child: CircleAvatar(
+                        radius: 100,
+                        backgroundImage: NetworkImage(user.photoURL.toString()),
+                      ),
+                    ),
+                    SizedBox(
+                      width: MediaQuery.of(context).size.width * 0.60,
+                      child: Column(
+                        children: [
+                          Text("Name : ${user.displayName}"),
+                          Text("Email : ${user.email}"),
+                          Text("Phone Number : ${user.phoneNumber}"),
+                        ],
+                      ),
+                    )
+                  ],
+                ),
+              ),
+            ),
           )
         ],
       ),
