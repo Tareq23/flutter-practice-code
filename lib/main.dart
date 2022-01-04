@@ -1,6 +1,7 @@
 
 // import 'package:demoapp/ExpandedWidget.dart';
 import 'package:demoapp/VCard.dart';
+import 'package:demoapp/connectivity.dart';
 import 'package:demoapp/customCard.dart';
 import 'package:demoapp/dice.dart';
 import 'package:demoapp/form.dart';
@@ -23,5 +24,6 @@ void main()
   // runApp(CustomForm());
   // runApp(MyAppState());
   // runApp(FormWidget());
-  runApp(FormPage());
+  // runApp(FormPage());
+  runApp(Conncetivities());
 }
