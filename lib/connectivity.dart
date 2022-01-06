@@ -23,27 +23,21 @@ class ConnectivityState extends StatefulWidget {
   @override
   _ConnectivityStateState createState() => _ConnectivityStateState();
 }
-
 class _ConnectivityStateState extends State<ConnectivityState> {
-
-
   StreamSubscription? _streamSubscription;
-
   Future checkConnection() async{
     final Connectivity _connectivity = Connectivity();
-    // ConnectivityResult _connectivityResult = ConnectivityResult.none;
-    // var connectivityResult = await (Connectivity.checkConnectivity());
     ConnectivityResult _connectivityResult = await _connectivity.checkConnectivity();
-
     if(_connectivityResult == ConnectivityResult.mobile)
     {
       Fluttertoast.showToast(
           msg: "Thank's for connecting with your mobile data",
           // toastLength: Toast.LENGTH_SHORT,
           toastLength: Toast.LENGTH_LONG,
-          gravity: ToastGravity.CENTER,
+          // gravity: ToastGravity.CENTER,
+          gravity: ToastGravity.TOP,
           backgroundColor: Colors.red,
-          textColor: Colors.white,
+          textColor: Colors.redAccent,
           fontSize: 16.0,
       );
     }
@@ -52,26 +46,33 @@ class _ConnectivityStateState extends State<ConnectivityState> {
         Fluttertoast.showToast(
           msg: "Thank's for connecting wifi",
           toastLength: Toast.LENGTH_SHORT,
-          gravity: ToastGravity.CENTER,
+          gravity: ToastGravity.TOP,
           fontSize: 22,
-          textColor: Colors.white,
+          textColor: Colors.redAccent,
           backgroundColor: Colors.black38,
         );
     }
-    // else if(_connectivityResult == ConnectivityResult.none){
-    //
-    // }
     else{
       Fluttertoast.showToast(
-
         msg: 'Check your internet connection',
-
+        textColor: Colors.redAccent,
       );
     }
-
   }
-
-
+  @override
+  void initState()
+  {
+    _streamSubscription = Connectivity().onConnectivityChanged.listen((event) {
+      checkConnection();
+    });
+    super.initState();
+  }
+  @override
+  void dispose() {
+    // TODO: implement dispose
+    _streamSubscription!.cancel();
+    super.dispose();
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
