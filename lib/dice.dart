@@ -2,20 +2,32 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 
+class Dice extends StatelessWidget {
+  const Dice({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: DiceApp(),
+    );
+  }
+}
+
+
 class DiceApp extends StatefulWidget {
   const DiceApp({Key? key}) : super(key: key);
-
   @override
   _DiceAppState createState() => _DiceAppState();
 }
 
 class _DiceAppState extends State<DiceApp> {
-  int leftDiceNum = 1;
-  int rightDiceNum = 6;
+  int topDiceNum = 1;
+  int bottomDiceNum = 6;
   int midDiceNum = 3;
-  void changeDiceNumberLeft() {
+  void changeDiceNumberTop() {
     setState(() {
-      leftDiceNum = Random().nextInt(6) + 1;
+      topDiceNum = Random().nextInt(6) + 1;
     });
   }
   void changeDiceNumberMid() {
@@ -23,92 +35,124 @@ class _DiceAppState extends State<DiceApp> {
       midDiceNum = Random().nextInt(6) + 1;
     });
   }
-  void changeDiceNumberRight() {
+  void changeDiceNumberBottom() {
     setState(() {
-      rightDiceNum = Random().nextInt(6) + 1;
+      bottomDiceNum = Random().nextInt(6) + 1;
     });
   }
-
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text(
-            'Dice App',
-            style: TextStyle(color: Colors.deepOrange),
-          ),
-          elevation: 0.0,
-          backgroundColor: Colors.transparent,
-          centerTitle: true,
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text(
+          'Dice App',
+          style: TextStyle(color: Colors.deepOrange,fontSize: 30),
         ),
-        body: Center(
-          child: Column(
-            children: [
-              Row(
+        elevation: 10.0,
+        backgroundColor: Colors.transparent,
+        centerTitle: true,
+      ),
+      body: Stack(
+        children: [
+          Image(
+            image: const NetworkImage("https://cdn.pixabay.com/photo/2020/03/02/18/23/street-4896486__340.jpg"),
+            width: MediaQuery.of(context).size.width,
+            height: MediaQuery.of(context).size.height,
+            fit: BoxFit.cover,
+          ),
+          Positioned(
+            top: 10,
+            left: 10,
+            right: 10,
+            child: SingleChildScrollView(
+              child: Column(
                 children: [
-                  Expanded(
-                    child: FlatButton(
-                      onPressed: () {},
-                      child: Image(
-                        image: AssetImage('assets/dice/dice$leftDiceNum.png'),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      Image(
+                          image: AssetImage('assets/dice/dice$topDiceNum.png'),
+                          width: 200,
+                          height: 200,
+                          fit: BoxFit.cover,
                       ),
-                    ),
+                      ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                          onPrimary: Colors.white,
+                          primary: Colors.redAccent,
+                          padding: const EdgeInsets.all(15),
+                        ),
+                        onPressed: (){
+                          changeDiceNumberTop();
+                        },
+                        child: const Text('Top Dice',style: TextStyle(fontSize: 30),),
+                      )
+                    ],
                   ),
-                  const SizedBox(
-                    width: 10,
+                  const Divider(
+                    height: 100,
+                    thickness: 20,
+                    color: Colors.white,
                   ),
-                  Expanded(
-                    child: FlatButton(
-                      onPressed: () {},
-                      child: Image(
-                        image: AssetImage('assets/dice/dice$midDiceNum.png'),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      Image(
+                          image: AssetImage('assets/dice/dice$midDiceNum.png'),
+                          width: 200,
+                          height: 200,
+                          fit: BoxFit.cover,
                       ),
-                    ),
+                      ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                          onPrimary: Colors.white,
+                          primary: Colors.redAccent,
+                          padding: const EdgeInsets.all(15),
+                        ),
+                        onPressed: (){
+                          changeDiceNumberMid();
+                        },
+                        child: const Text('Mid Dice',style: TextStyle(fontSize: 30),),
+                      )
+                    ],
                   ),
-                  const SizedBox(
-                    width: 10,
+                  const Divider(
+                    height: 100,
+                    thickness: 20,
+                    color: Colors.white,
                   ),
-                  Expanded(
-                    child: FlatButton(
-                      onPressed: () {},
-                      child: Image(
-                        image: AssetImage('assets/dice/dice$rightDiceNum.png'),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      Image(
+                          image: AssetImage('assets/dice/dice$bottomDiceNum.png'),
+                          width: 200,
+                          height: 200,
+                          fit: BoxFit.cover,
                       ),
-                    ),
+                      ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                          onPrimary: Colors.white,
+                          primary: Colors.redAccent,
+                          padding: const EdgeInsets.all(15),
+                        ),
+                        onPressed: (){
+                          changeDiceNumberBottom();
+                        },
+                        child: const Text('Bottom Dice',style: TextStyle(fontSize: 30),),
+                      )
+                    ],
                   ),
-                ],
+                  const Divider(
+                    height: 100,
+                    thickness: 20,
+                    color: Colors.white,
+                  ),
+                ]
               ),
-              Row(children: [
-                Expanded(
-                  child: ElevatedButton(
-                    onPressed: () {
-                      changeDiceNumberLeft();
-                    },
-                    child: Text("change left"),
-                  ),
-                ),
-                Expanded(
-                  child: ElevatedButton(
-                    onPressed: () {
-                      changeDiceNumberMid();
-                    },
-                    child: Text("change mid"),
-                  ),
-                ),
-                Expanded(
-                  child: ElevatedButton(
-                    onPressed: () {
-                      changeDiceNumberRight();
-                    },
-                    child: Text("change right"),
-                  ),
-                ),
-              ])
-            ],
-          ),
-        ),
+            ),
+          )
+        ],
       ),
     );
   }

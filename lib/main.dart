@@ -21,11 +21,11 @@ void main()
   // runApp(CustomCard());
   // runApp(CustomVCard());
   // runApp(LayoutWidget());
-  // runApp(DiceApp());
+  runApp(Dice());
   // runApp(CustomForm());
   // runApp(MyAppState());
   // runApp(FormWidget());
   // runApp(FormPage());
   // runApp(Conncetivities());
-  runApp(Animator());
+  // runApp(Animator());
 }
