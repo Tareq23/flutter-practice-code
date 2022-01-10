@@ -7,6 +7,7 @@ import 'package:demoapp/customCard.dart';
 import 'package:demoapp/dice.dart';
 import 'package:demoapp/form.dart';
 import 'package:demoapp/layoutPage.dart';
+import 'package:demoapp/sub_auto_switch_day_night.dart';
 import 'package:demoapp/ui/form.dart';
 import 'package:demoapp/ui/form_page.dart';
 import 'package:demoapp/ui/stateful_widget.dart';
@@ -21,11 +22,12 @@ void main()
   // runApp(CustomCard());
   // runApp(CustomVCard());
   // runApp(LayoutWidget());
-  runApp(Dice());
+  // runApp(Dice());
   // runApp(CustomForm());
   // runApp(MyAppState());
   // runApp(FormWidget());
   // runApp(FormPage());
   // runApp(Conncetivities());
   // runApp(Animator());
+  runApp(SubAutoSwitchDayNight());
 }
