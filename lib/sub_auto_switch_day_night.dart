@@ -11,6 +11,7 @@ class SubAutoSwitchDayNight extends StatelessWidget {
     );
   }
 }
+
 class SubAutoSwitchDayNightState extends StatefulWidget {
   const SubAutoSwitchDayNightState({Key? key}) : super(key: key);
 
@@ -19,45 +20,173 @@ class SubAutoSwitchDayNightState extends StatefulWidget {
 }
 
 class _SubAutoSwitchDayNightState extends State<SubAutoSwitchDayNightState> {
-  bool _switch =false;
+  bool _switch = true;
   ThemeData _dark = ThemeData(brightness: Brightness.dark);
   ThemeData light = ThemeData(brightness: Brightness.light);
-  String _dayImgUrl = "https://media.istockphoto.com/photos/beautiful-landscape-in-park-with-tree-and-green-grass-field-at-picture-id1021170914?b=1&k=20&m=1021170914&s=170667a&w=0&h=t15j_mA2H1--bs23MczpFe0LazJCiBowbRKWk9wBjMA=";
-  String _nightImgUrl = "https://cdn.pixabay.com/photo/2013/06/20/13/52/world-140304__340.jpg";
-  String _currentImgUrl = "";
   @override
   Widget build(BuildContext context) {
+    var imgWidth = MediaQuery.of(context).size.width / 2 - 40;
+    var imgHeight = 300.0;
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: _switch ? _dark : light,
       home: Scaffold(
-        appBar: AppBar(
-          title: Text('Day and Night'),
-        ),
-        body: Stack(
-          children: [
-            Image(
-              image: _switch == false ? NetworkImage(_dayImgUrl) : NetworkImage(_nightImgUrl),
-              width: MediaQuery.of(context).size.width,
-              height: MediaQuery.of(context).size.height,
-              fit: BoxFit.cover,
-            ),
-            Center(
-              // top: 100,
-              child: Text(
-                "Day Image",
-                style: TextStyle(
-                  color: _switch == false ? Colors.black : Colors.white,
-                  fontSize: 40,
-                  fontWeight: FontWeight.w600
-                ),
+          appBar: AppBar(
+            title: Text('Day and Night',style: TextStyle(fontWeight: FontWeight.w700,fontSize: 38),),
+            centerTitle: true,
+          ),
+          body: Stack(
+              children: [
+            SingleChildScrollView(
+              child: Column(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(
+                        left: 10, right: 10, top: 20, bottom: 10),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        Container(
+                          width: imgWidth,
+                          height: imgHeight,
+                          decoration: const BoxDecoration(
+                            borderRadius: BorderRadius.only(
+                                bottomRight: Radius.circular(130)),
+                          ),
+                          child: const Image(
+                            image: NetworkImage(
+                              "https://cdn.pixabay.com/photo/2017/02/02/12/21/nature-2032666__340.jpg",
+                            ),
+                            width: double.infinity,
+                            height: double.infinity,
+                            fit: BoxFit.cover,
+                          ),
+                        ),
+                        Container(
+                          width: imgWidth,
+                          height: imgHeight,
+                          decoration: const BoxDecoration(
+                            borderRadius: BorderRadius.only(
+                                bottomRight: Radius.circular(130)),
+                          ),
+                          child: const Image(
+                            image: NetworkImage(
+                              "https://media.istockphoto.com/photos/teenager-friends-sitting-together-and-laughing-picture-id1278978403?b=1&k=20&m=1278978403&s=170667a&w=0&h=DttaPDTNMxi7p7hi41F2YLuqkl3AMB0yINjc9dm8hPM=",
+                            ),
+                            width: double.infinity,
+                            height: double.infinity,
+                            fit: BoxFit.cover,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(
+                        left: 10, right: 10, top: 20, bottom: 10),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        Container(
+                          width: imgWidth,
+                          height: imgHeight,
+                          decoration: const BoxDecoration(
+                            borderRadius: BorderRadius.only(
+                                bottomRight: Radius.circular(130)),
+                          ),
+                          child: const Image(
+                            image: NetworkImage(
+                              "https://media.istockphoto.com/photos/friends-celebrates-beginning-of-winter-in-mountains-picture-id1286815964?b=1&k=20&m=1286815964&s=170667a&w=0&h=SCPRmiM747uEeiWhk6Sq7jJMAl_D1mHONDLjeoid2sw=",
+                            ),
+                            width: double.infinity,
+                            height: double.infinity,
+                            fit: BoxFit.cover,
+                          ),
+                        ),
+                        Container(
+                          width: imgWidth,
+                          height: imgHeight,
+                          decoration: const BoxDecoration(
+                            borderRadius: BorderRadius.only(
+                                bottomRight: Radius.circular(130)),
+                          ),
+                          child: const Image(
+                            image: NetworkImage(
+                              "https://cdn.pixabay.com/photo/2017/02/02/12/21/nature-2032666__340.jpg",
+                            ),
+                            width: double.infinity,
+                            height: double.infinity,
+                            fit: BoxFit.cover,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(
+                        left: 10, right: 10, top: 20, bottom: 10),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        Container(
+                          width: imgWidth,
+                          height: imgHeight,
+                          decoration: const BoxDecoration(
+                            borderRadius: BorderRadius.only(
+                                bottomRight: Radius.circular(130)),
+                          ),
+                          child: const Image(
+                            image: NetworkImage(
+                              "https://media.istockphoto.com/photos/friends-celebrates-beginning-of-winter-in-mountains-picture-id1286815964?b=1&k=20&m=1286815964&s=170667a&w=0&h=SCPRmiM747uEeiWhk6Sq7jJMAl_D1mHONDLjeoid2sw=",
+                            ),
+                            width: double.infinity,
+                            height: double.infinity,
+                            fit: BoxFit.cover,
+                          ),
+                        ),
+                        Container(
+                          width: imgWidth,
+                          height: imgHeight,
+                          decoration: const BoxDecoration(
+                            borderRadius: BorderRadius.only(
+                                bottomRight: Radius.circular(130)),
+                          ),
+                          child: const Image(
+                            image: NetworkImage(
+                              "https://media.istockphoto.com/photos/teenager-friends-sitting-together-and-laughing-picture-id1278978403?b=1&k=20&m=1278978403&s=170667a&w=0&h=DttaPDTNMxi7p7hi41F2YLuqkl3AMB0yINjc9dm8hPM=",
+                            ),
+                            width: double.infinity,
+                            height: double.infinity,
+                            fit: BoxFit.cover,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
               ),
-            )
-          ],
-        )
-      ),
-
+            ),
+                Positioned(
+                  left: 30,
+                  bottom: 200,
+                  child: Container(
+                    width: imgWidth*2+20,
+                    height: 100,
+                    color: Colors.deepPurple.withOpacity(0.7),
+                    child: Switch(
+                      splashRadius: 30,
+                      inactiveThumbColor: Colors.greenAccent,
+                      activeColor: Colors.deepOrange,
+                      value: _switch,
+                      onChanged: (switchChange){
+                        setState(() {
+                          _switch = switchChange;
+                        });
+                      },
+                    ),
+                  ),
+                )
+          ])),
     );
   }
 }
-
