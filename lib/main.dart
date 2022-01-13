@@ -3,6 +3,7 @@ import 'package:demoapp/SwitchSliderTextFieldWidget.dart';
 import 'package:demoapp/customCard.dart';
 import 'package:demoapp/list_view/list_view.dart';
 import 'package:demoapp/snack_bar.dart';
+import 'package:demoapp/sub_liquid_swipe.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -11,7 +12,8 @@ void main() {
   // runApp(SwitchSliderTextFieldWidget());
   // runApp(CustomVCard());
   // runApp(ShowStudentList());
-  runApp(SnackBarWidget());
+  // runApp(SnackBarWidget());\
+  runApp(SubLiquidSwipe());
 }
 
 class FlutterButton extends StatelessWidget {
