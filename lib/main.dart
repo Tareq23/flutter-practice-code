@@ -8,6 +8,7 @@ import 'package:demoapp/dice.dart';
 import 'package:demoapp/form.dart';
 import 'package:demoapp/layoutPage.dart';
 import 'package:demoapp/sub_auto_switch_day_night.dart';
+import 'package:demoapp/sub_swipe_liquid.dart';
 import 'package:demoapp/ui/form.dart';
 import 'package:demoapp/ui/form_page.dart';
 import 'package:demoapp/ui/stateful_widget.dart';
@@ -29,5 +30,6 @@ void main()
   // runApp(FormPage());
   // runApp(Conncetivities());
   // runApp(Animator());
-  runApp(SubAutoSwitchDayNight());
+  // runApp(SubAutoSwitchDayNight());
+  runApp(SubSwipeLiquid());
 }
