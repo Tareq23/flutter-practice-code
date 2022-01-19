@@ -1,6 +1,7 @@
 import 'package:demoapp/ExpandWidget.dart';
 import 'package:demoapp/SwitchSliderTextFieldWidget.dart';
 import 'package:demoapp/customCard.dart';
+import 'package:demoapp/grid_view.dart';
 import 'package:demoapp/list_view/list_view.dart';
 import 'package:demoapp/snack_bar.dart';
 import 'package:demoapp/sub_liquid_swipe.dart';
@@ -12,8 +13,9 @@ void main() {
   // runApp(SwitchSliderTextFieldWidget());
   // runApp(CustomVCard());
   // runApp(ShowStudentList());
-  // runApp(SnackBarWidget());\
-  runApp(SubLiquidSwipe());
+  // runApp(SnackBarWidget());
+  // runApp(SubLiquidSwipe());
+  runApp(GridViewWidget());
 }
 
 class FlutterButton extends StatelessWidget {
