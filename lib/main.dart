@@ -29,7 +29,7 @@ void main()
   // runApp(FormWidget());
   // runApp(FormPage());
   // runApp(Conncetivities());
-  // runApp(Animator());
+  runApp(Animator());
   // runApp(SubAutoSwitchDayNight());
-  runApp(SubSwipeLiquid());
+  // runApp(SubSwipeLiquid());
 }
