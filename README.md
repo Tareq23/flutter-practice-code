@@ -4,6 +4,11 @@ A new Flutter application.
 
 ## Getting Started
 
+
+
+## Staggered Grid View Image
+<img width="300" height="550" src="https://raw.githubusercontent.com/Tareq23/flutter-practice-code/ab3-036/assets/ui/stagged%20grid%20view%20ui.PNG"/>
+
 This project is a starting point for a Flutter application.
 
 A few resources to get you started if this is your first Flutter project:
