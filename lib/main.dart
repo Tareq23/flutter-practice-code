@@ -7,6 +7,7 @@ import 'package:demoapp/customCard.dart';
 import 'package:demoapp/dice.dart';
 import 'package:demoapp/form.dart';
 import 'package:demoapp/layoutPage.dart';
+import 'package:demoapp/stagger_grid_view.dart';
 import 'package:demoapp/sub_auto_switch_day_night.dart';
 import 'package:demoapp/sub_swipe_liquid.dart';
 import 'package:demoapp/ui/form.dart';
@@ -29,7 +30,8 @@ void main()
   // runApp(FormWidget());
   // runApp(FormPage());
   // runApp(Conncetivities());
-  runApp(Animator());
+  // runApp(Animator());
   // runApp(SubAutoSwitchDayNight());
   // runApp(SubSwipeLiquid());
+  runApp(GridViewWidget());
 }
